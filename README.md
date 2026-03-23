@@ -108,13 +108,13 @@ git clone https://github.com/karanvishwakarma1209/GymPro.git
 Copy the cloned folder to your XAMPP htdocs directory:
 
 ```
-C:\xampp\htdocs\GymPro-Fitness\
+C:\xampp\htdocs\GymPro\
 ```
 
 > **Or** clone directly into htdocs:
 > ```bash
 > cd C:\xampp\htdocs
-> git clone https://github.com/YOUR_USERNAME/GymPro-Fitness.git
+> git clone https://github.com/karanvishwakarma1209/GymPro.git
 > ```
 
 ### Step 3: Start XAMPP
@@ -137,7 +137,7 @@ C:\xampp\htdocs\GymPro-Fitness\
 ```bash
 cd C:\xampp\mysql\bin
 mysql -u root -e "CREATE DATABASE gym_db;"
-mysql -u root gym_db < C:\xampp\htdocs\GymPro-Fitness\database\gym_db.sql
+mysql -u root gym_db < C:\xampp\htdocs\GymPro\database\gym_db.sql
 ```
 
 ### Step 5: Configure the Project
@@ -157,7 +157,7 @@ define('SITE_URL', 'http://localhost/GymPro-Fitness');  // ← match your folder
 ### Step 6: Open in Browser 🎉
 
 ```
-http://localhost/GymPro-Fitness/
+http://localhost/GymPro/
 ```
 
 ---
@@ -185,11 +185,6 @@ http://localhost/GymPro-Fitness/
 
 ---
 
-## 📸 Screenshots
-
-> _Add screenshots of your project here after running it._
-
----
 
 ## 💳 Payment Integration
 
