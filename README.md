@@ -100,7 +100,7 @@ GymPro/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/GymPro-Fitness.git
+git clone https://github.com/karanvishwakarma1209/GymPro.git
 ```
 
 ### Step 2: Move to XAMPP
