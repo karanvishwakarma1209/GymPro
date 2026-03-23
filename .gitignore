@@ -1,0 +1,22 @@
+# Dependencies & Environment
+/vendor/
+*.log
+*.env
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# XAMPP specific
+/xampp/
+
+# Gemini/Agent files
+.gemini/
+.agents/

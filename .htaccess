@@ -1,0 +1,61 @@
+# GymPro - Apache Configuration
+# ================================
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Prevent directory listing
+Options -Indexes
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to include files directly
+<Files "*.php">
+    # Allow access by default
+</Files>
+
+# Block access to SQL files
+<FilesMatch "\.(sql|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# PHP settings (if mod_php)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 60
+    php_value session.cookie_httponly 1
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access 1 month"
+    ExpiresByType image/jpeg "access 1 month"
+    ExpiresByType image/png "access 1 month"
+    ExpiresByType image/gif "access 1 month"
+    ExpiresByType image/svg+xml "access 1 month"
+    ExpiresByType text/css "access 1 week"
+    ExpiresByType application/javascript "access 1 week"
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
